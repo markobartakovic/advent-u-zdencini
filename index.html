@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+
+<html lang="hr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Advent u Zdenčini | 19. i 20. prosinca | NK Zdenčina</title>
+
+  <meta name="description" content="Posjetite Advent u Zdenčini 19. i 20. prosinca na igralištu NK Zdenčina. Dolazak Djeda Božićnjaka, pokloni za djecu, božićna tombola, kuhano vino i domaće poslastice. Ulaz slobodan!">
+
+ 
+
+  <!-- Open Graph / Facebook -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="Advent u Zdenčini 🎄 19. & 20. prosinca">
+
+  <meta property="og:description" content="Doček Djeda Božićnjaka, darovi za djecu, božićna tombola, kuhano vino i topla blagdanska atmosfera na NK Zdenčina!">
+
+  <meta property="og:image" content="assets/plakat-detaljni.jpg">
+
+ 
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+ 
+
+  <!-- Font Awesome Icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+ 
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- Snježni canvas efekt -->
+
+  <canvas id="snow-canvas"></canvas>
+
+ 
+
+  <!-- Navigacijska traka -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+
+        <span class="logo-icon">🎄</span>
+
+        <span class="logo-text">Advent u Zdenčini</span>
+
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+
+        <a href="#program" class="nav-link"><i class="fa-regular fa-calendar-check"></i> Program</a>
+
+        <a href="#prijava" class="nav-link nav-highlight"><i class="fa-solid fa-gift"></i> Prijava djece</a>
+
+        <a href="#ponuda" class="nav-link"><i class="fa-solid fa-mug-hot"></i> Ponuda</a>
+
+        <a href="#uspomene" class="nav-link"><i class="fa-solid fa-camera-retro"></i> Prošla godina</a>
+
+        <a href="#lokacija" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Lokacija</a>
+
+        <a href="#plakat" class="nav-link"><i class="fa-regular fa-image"></i> Plakat</a>
+
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Otvori izbornik">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </header>
+
+ 
+
+  <!-- Hero sekcija -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+      <div class="hero-badge">
+
+        <i class="fa-solid fa-sparkles"></i> 19. & 20. PROSINCA • NK ZDENČINA <i class="fa-solid fa-sparkles"></i>
+
+      </div>
+
+     
+
+      <h1 class="hero-title">
+
+        <span class="hero-subtitle">Ponovno vas pozivamo na</span>
+
+        Božić u Zdenčini
+
+      </h1>
+
+ 
+
+      <p class="hero-desc">
+
+        Topla božićna priča uz mirise kuhanog vina i slastica, dječju radost uz dolazak Djeda Božićnjaka i veselu veliku božićnu tombolu!
+
+      </p>
+
+ 
+
+      <div class="hero-info-pills">
+
+        <div class="pill"><i class="fa-regular fa-clock"></i> Početak oba dana od <strong>17:00 h</strong></div>
+
+        <div class="pill"><i class="fa-solid fa-location-dot"></i> Igralište <strong>NK Zdenčina</strong></div>
+
+        <div class="pill"><i class="fa-solid fa-ticket"></i> <strong>Ulaz slobodan</strong></div>
+
+      </div>
+
+ 
+
+      <!-- Odbrojavanje (Countdown) -->
+
+      <div class="countdown-wrapper">
+
+        <h3 class="countdown-label">Do početka čarolije preostalo je:</h3>
+
+        <div class="countdown-grid" id="countdown">
+
+          <div class="countdown-item">
+
+            <span class="countdown-num" id="days">00</span>
+
+            <span class="countdown-text">Dana</span>
+
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <div class="countdown-item">
+
+            <span class="countdown-num" id="hours">00</span>
+
+            <span class="countdown-text">Sati</span>
+
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <div class="countdown-item">
+
+            <span class="countdown-num" id="minutes">00</span>
+
+            <span class="countdown-text">Minuta</span>
+
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <div class="countdown-item">
+
+            <span class="countdown-num" id="seconds">00</span>
+
+            <span class="countdown-text">Sekundi</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ 
+
+      <!-- CTA gumbi -->
+
+      <div class="hero-actions">
+
+        <a href="#prijava" class="btn btn-primary">
+
+          <i class="fa-solid fa-gift"></i> Prijavi dijete za poklončić
+
+        </a>
+
+        <a href="#program" class="btn btn-secondary">
+
+          <i class="fa-solid fa-list-check"></i> Pogledaj raspored programa
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Program događanja -->
+
+  <section class="section program-section" id="program">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">Blagdanski raspored</span>
+
+        <h2 class="section-title">Program Adventa</h2>
+
+        <p class="section-subtitle">Dva dana ispunjena osmijesima, druženjem i božićnim duhom</p>
+
+      </div>
+
+ 
+
+      <div class="program-grid">
+
+        <!-- Subota -->
+
+        <div class="program-card">
+
+          <div class="card-ribbon">Dan 1</div>
+
+          <div class="program-card-header">
+
+            <span class="program-day">SUBOTA</span>
+
+            <span class="program-date">19. prosinca</span>
+
+            <span class="program-time-badge"><i class="fa-regular fa-clock"></i> od 17:00 h</span>
+
+          </div>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+
+              <div class="timeline-bullet"><i class="fa-solid fa-pen-fancy"></i></div>
+
+              <div class="timeline-content">
+
+                <h4>Pisanje pisma Djedu</h4>
+
+                <p>Kreativni kutak za djecu prije dolaska najdražeg djedice! Mališani mogu nacrtati i napisati svoje božićne želje.</p>
+
+              </div>
+
+            </div>
+
+ 
+
+            <div class="timeline-item highlight-item">
+
+              <div class="timeline-bullet star"><i class="fa-solid fa-sleigh"></i></div>
+
+              <div class="timeline-content">
+
+                <div class="time-tag">Oko 18:00 – 18:30 h</div>
+
+                <h4>Dolazak Djeda Božićnjaka! 🎅</h4>
+
+                <p>Slikanje, doček i vesela podjela poklončića za prijavljene mališane uz neprocjenjive uspomene.</p>
+
+              </div>
+
+            </div>
+
+ 
+
+            <div class="timeline-item">
+
+              <div class="timeline-bullet"><i class="fa-solid fa-music"></i></div>
+
+              <div class="timeline-content">
+
+                <h4>Gastro druženje i glazba</h4>
+
+                <p>Uživanje uz božićne melodije, mirisno kuhano vino i domaće kobasice.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+ 
+
+        <!-- Nedjelja -->
+
+        <div class="program-card">
+
+          <div class="card-ribbon">Dan 2</div>
+
+          <div class="program-card-header">
+
+            <span class="program-day">NEDJELJA</span>
+
+            <span class="program-date">20. prosinca</span>
+
+            <span class="program-time-badge"><i class="fa-regular fa-clock"></i> od 17:00 h</span>
+
+          </div>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+
+              <div class="timeline-bullet"><i class="fa-solid fa-heart"></i></div>
+
+              <div class="timeline-content">
+
+                <h4>Blagdansko druženje</h4>
+
+                <p>Ugodna večer uz božićne pjesme, tople razgovore, kuhano vino, čaj i susret s dragim prijateljima i susjedima.</p>
+
+              </div>
+
+            </div>
+
+ 
+
+            <div class="timeline-item highlight-item tombola-item">
+
+              <div class="timeline-bullet gold"><i class="fa-solid fa-trophy"></i></div>
+
+              <div class="timeline-content">
+
+                <div class="time-tag gold">Glavni događaj večeri</div>
+
+                <h4>Velika Božićna Tombola i mini tombola za djecu! 🎁</h4>
+
+                <p>Bogate nagrade i topla božićna atmosfera! Okušajte blagdansku sreću i osvojite prigodne nagrade za cijelu obitelj.</p>
+
+              </div>
+
+            </div>
+
+ 
+
+            <div class="timeline-item">
+
+              <div class="timeline-bullet"><i class="fa-solid fa-fire"></i></div>
+
+              <div class="timeline-content">
+
+                <h4>Zatvaranje Adventa</h4>
+
+                <p>Druženje uz hranu, piće i blagdansko nazdravljanje.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Prijava djece sekcija (Povezano s Google tablicom / Sheets) -->
+
+  <section class="section register-section" id="prijava">
+
+    <div class="container">
+
+      <div class="register-container">
+
+       
+
+        <div class="register-info">
+
+          <div class="notice-badge">
+
+            <i class="fa-solid fa-calendar-xmark"></i> Rok za prijavu: <strong>16. prosinca</strong>
+
+          </div>
+
+          <h2>Prijava djece za poklončiće 🎁</h2>
+
+          <p class="register-lead">
+
+            Dragi roditelji, kako bi Djed Božićnjak na vrijeme pripremio darove za sve mališane, molimo vas da prijavite svoju djecu najkasnije do <strong>16.12.</strong>
+
+          </p>
+
+         
+
+          <div class="contact-box">
+
+            <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
+
+            <div>
+
+              <span class="contact-sub">Prijave su moguće i direktnim pozivom/SMS-om:</span>
+
+              <a href="tel:+385994119102" class="contact-number">+385 99 411 9102</a>
+
+            </div>
+
+          </div>
+
+ 
+
+          <div class="whatsapp-quick">
+
+            <a href="https://wa.me/385994119102?text=Pozdrav!%20%C5%BDelim%20prijaviti%20dijete%20za%20poklon%C4%8Di%C4%87%20na%20Adventu%20u%20Zden%C4%8Dini." target="_blank" rel="noopener" class="btn btn-whatsapp">
+
+              <i class="fa-brands fa-whatsapp"></i> Brza prijava putem WhatsAppa
+
+            </a>
+
+          </div>
+
+ 
+
+          <ul class="register-perks">
+
+            <li><i class="fa-solid fa-circle-check"></i> Podjela je organizirana u subotu oko 18:00 – 18:30 h</li>
+
+            <li><i class="fa-solid fa-circle-check"></i> Fotografiranje s Djedom Božićnjakom</li>
+
+            <li><i class="fa-solid fa-circle-check"></i> Sudjelovanje je besplatno za svu djecu</li>
+
+          </ul>
+
+        </div>
+
+ 
+
+        <div class="register-form-card">
+
+          <div class="form-header">
+
+            <h3>Online prijavni obrazac</h3>
+
+            <p>Popunite podatke u nastavku – unos se automatski bilježi u tablicu organizatora.</p>
+
+          </div>
+
+ 
+
+          <form id="adventForm" class="advent-form" novalidate>
+
+            <div class="form-group">
+
+              <label for="parentName"><i class="fa-regular fa-user"></i> Ime i prezime roditelja / skrbnika *</label>
+
+              <input type="text" id="parentName" name="ImeRoditelja" placeholder="npr. Marko Horvat" required>
+
+              <small class="error-msg"></small>
+
+            </div>
+
+ 
+
+            <div class="form-group">
+
+              <label for="phone"><i class="fa-solid fa-mobile-screen-button"></i> Broj mobitela / telefona *</label>
+
+              <input type="tel" id="phone" name="BrojMobitela" placeholder="npr. 099 123 4567" required>
+
+              <small class="error-msg"></small>
+
+            </div>
+
+ 
+
+            <div class="form-group">
+
+              <label for="children"><i class="fa-solid fa-children"></i> Ime prezime i dob djeteta (ili više djece) *</label>
+
+              <textarea id="children" name="Djeca" rows="2" placeholder="npr. Ivan Horvat (5 god), Lucija Horvat (7 god)" required></textarea>
+
+              <small class="error-msg"></small>
+
+            </div>
+
+ 
+
+            <div class="form-group">
+
+              <label for="notes"><i class="fa-regular fa-comment-dots"></i> Napomena (opcionalno)</label>
+
+              <input type="text" id="notes" name="Napomena" placeholder="">
+
+            </div>
+
+ 
+
+            <button type="submit" class="btn btn-submit" id="submitBtn">
+
+              <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Pošalji prijavu</span>
+
+              <span class="btn-loader" style="display: none;"><i class="fa-solid fa-spinner fa-spin"></i> Slanje prijave...</span>
+
+            </button>
+
+          </form>
+
+ 
+
+          <!-- Status poruka nakon slanja -->
+
+          <div id="formFeedback" class="form-feedback" style="display: none;"></div>
+
+        </div>
+
+ 
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Gastro Ponuda -->
+
+  <section class="section offer-section" id="ponuda">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">Ugrijte se i uživajte</span>
+
+        <h2 class="section-title">Bogata blagdanska ponuda</h2>
+
+        <p class="section-subtitle">Dostupno oba dana vikenda od 17:00 sati</p>
+
+      </div>
+
+ 
+
+      <div class="offer-grid">
+
+        <div class="offer-card">
+
+          <div class="offer-icon"><i class="fa-solid fa-wine-glass"></i></div>
+
+          <h3>Kuhano vino</h3>
+
+          <p>Domaće aromatično crno i bijelo kuhano vino s pažljivo biranim blagdanskim začinima i cimetom.</p>
+
+        </div>
+
+ 
+
+        <div class="offer-card">
+
+          <div class="offer-icon"><i class="fa-solid fa-mug-hot"></i></div>
+
+          <h3>Topli čaj & Kakao</h3>
+
+          <p>Savršeno za najmlađe i sve koji se žele ugrijati uz bogat topli čaj i kremasti blagdanski kakao.</p>
+
+        </div>
+
+ 
+
+        <div class="offer-card">
+
+          <div class="offer-icon"><i class="fa-solid fa-hotdog"></i></div>
+
+          <h3>Domaće kobasice</h3>
+
+          <p>Svježe domaće kobasice s prilozima po želji za pravi gastronomski doživljaj.</p>
+
+        </div>
+
+ 
+
+        <div class="offer-card">
+
+          <div class="offer-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+
+          <h3>Slatke poslastice</h3>
+
+          <p>Tradicionalne blagdanske slastice, fritule i slatki zalogaji koji mirišu na dom i Božić.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Uspomene: Pogledajte kako je bilo prošle godine -->
+
+  <section class="section memories-section" id="uspomene">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">Uspomene i tradicija</span>
+
+        <h2 class="section-title">Pogledajte kako je bilo prošle godine</h2>
+
+        <p class="section-subtitle">Topli osmijesi, radost naših najmlađih i blagdanski duh koji nas svake godine ponovno okuplja</p>
+
+      </div>
+
+ 
+
+      <!-- Videozapisi -->
+
+      <div class="memories-block">
+
+        <div class="block-title">
+
+          <i class="fa-solid fa-clapperboard"></i>
+
+          <span>Video trenuci</span>
+
+        </div>
+
+       
+
+        <div class="videos-grid">
+
+          <!-- Video 1 -->
+
+          <div class="video-card">
+
+            <div class="video-wrapper">
+
+              <!-- Zamijenite YOUTUBE_ID_1 sa stvarnim ID-jem vašeg YouTube videa -->
+
+              <iframe
+               
+                src="https://www.youtube.com/embed/4mmoE-Shunk"
+
+                title="Advent u Zdenčini - Dolazak Djeda Božićnjaka"
+
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                allowfullscreen
+
+                loading="lazy">
+
+              </iframe>
+
+            </div>
+
+            <div class="video-info">
+
+              <span class="video-badge"><i class="fa-solid fa-play"></i> Video 1</span>
+
+              <h4>Dolazak Djeda Božićnjaka i podjela poklona</h4>
+
+              <p>Trenuci uzbuđenja i radosti kada je najdraži djedica stigao među naše mališane.</p>
+
+            </div>
+
+          </div>
+
+ 
+
+          <!-- Video 2 -->
+
+          <div class="video-card">
+
+            <div class="video-wrapper">
+
+ 
+              <iframe
+
+                src="https://www.youtube.com/embed/9Y-mMnW_FHU"
+
+                title="Advent u Zdenčini - Blagdansko druženje i tombola"
+
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+
+                >
+
+              </iframe>
+
+
+            </div>
+
+            <div class="video-info">
+
+              <span class="video-badge"><i class="fa-solid fa-play"></i> Video 2</span>
+
+              <h4>Blagdansko druženje, kuhano vino i tombola</h4>
+
+              <p>Topla večernja atmosfera, božićne pjesme i izvlačenje uzbudljivih nagrada.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+ 
+
+      <!-- Fotogalerija (5 slika) -->
+
+      <div class="memories-block">
+
+        <div class="block-title">
+
+          <i class="fa-solid fa-images"></i>
+
+          <span>Fotogalerija ugođaja</span>
+
+        </div>
+
+ 
+
+        <div class="gallery-grid">
+
+          <!-- Slika 1 (Istaknuta) -->
+
+          <div class="gallery-item item-featured" onclick="openPosterModal('assets/uspomena-1.jpg')">
+
+            <img src="assets/uspomena-1.jpg" alt="Advent u Zdenčini - Djed Božićnjak" loading="lazy">
+
+            <div class="gallery-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Djed Božićnjak</span>
+
+            </div>
+
+          </div>
+
+ 
+
+          <!-- Slika 2 -->
+
+          <div class="gallery-item" onclick="openPosterModal('assets/uspomena-2.jpg')">
+
+            <img src="assets/uspomena-2.jpg" alt="Advent u Zdenčini - Radionica i pisma" loading="lazy">
+
+            <div class="gallery-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Pisanje pisama i dječji kutak</span>
+
+            </div>
+
+          </div>
+
+ 
+
+          <!-- Slika 3 -->
+
+          <div class="gallery-item" onclick="openPosterModal('assets/uspomena-3.jpg')">
+
+            <img src="assets/uspomena-3.jpg" alt="Slikanje s djedom božičnjakom" loading="lazy">
+
+            <div class="gallery-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Slikanje s djedom božičnjakom</span>
+
+            </div>
+
+          </div>
+
+ 
+
+          <!-- Slika 4 -->
+
+          <div class="gallery-item" onclick="openPosterModal('assets/uspomena-4.jpg')">
+
+            <img src="assets/uspomena-4.jpg" alt="Dječja pisma" loading="lazy">
+
+            <div class="gallery-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Dječja pisma</span>
+
+            </div>
+
+          </div>
+
+ 
+
+          <!-- Slika 5 -->
+
+          <div class="gallery-item" onclick="openPosterModal('assets/uspomena-5.jpg')">
+
+            <img src="assets/uspomena-5.jpg" alt="Advent u Zdenčini - Noćni ugođaj na igralištu" loading="lazy">
+
+            <div class="gallery-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Večernje druženje mještana</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ 
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Lokacija sekcija -->
+
+  <section class="section location-section" id="lokacija">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">Gdje se nalazimo</span>
+
+        <h2 class="section-title">Nogometni klub Zdenčina</h2>
+
+        <p class="section-subtitle">Posjetite nas na igralištu NK Zdenčina, Donja Zdenčina</p>
+
+      </div>
+
+ 
+
+      <div class="location-wrapper">
+
+        <div class="location-details">
+
+          <div class="loc-card">
+
+            <div class="loc-icon"><i class="fa-solid fa-location-dot"></i></div>
+
+            <div class="loc-info">
+
+              <h4>Adresa</h4>
+
+              <p>Igralište NK Zdenčina<br>Donja Zdenčina, Vladimira Nazora 41</p>
+
+            </div>
+
+          </div>
+
+ 
+
+          <div class="loc-card">
+
+            <div class="loc-icon"><i class="fa-solid fa-car"></i></div>
+
+            <div class="loc-info">
+
+              <h4>Parking i pristup</h4>
+
+              <p>Osiguran pristup za automobile uz igralište. Lokacija je lako dostupna i označena blagdanskom rasvjetom.</p>
+
+            </div>
+
+          </div>
+
+ 
+
+          <div class="loc-card">
+
+            <div class="loc-icon"><i class="fa-solid fa-circle-info"></i></div>
+
+            <div class="loc-info">
+
+              <h4>Informacije</h4>
+
+              <p>Događaj se održava na otvorenom. Odjenite se toplo!</p>
+
+            </div>
+
+          </div>
+
+ 
+
+          <div class="loc-actions">
+
+            <a href="https://www.google.com/maps/place/NK+Zden%C4%8Dina/@45.6760002,15.7457554,17z" target="_blank" rel="noopener" class="btn btn-primary">
+
+              <i class="fa-solid fa-diamond-turn-right"></i> Otvori u Google Kartama
+
+            </a>
+
+          </div>
+
+        </div>
+
+ 
+
+        <!-- Google Maps Embed -->
+
+        <div class="map-container">
+
+          <iframe
+
+            title="Lokacija NK Zdenčina"
+
+            src="https://maps.google.com/maps?q=45.6760002,15.7457554&hl=hr&z=16&output=embed"
+
+            width="100%"
+
+            height="380"
+
+            style="border:0;"
+
+            allowfullscreen=""
+
+            loading="lazy"
+
+            referrerpolicy="no-referrer-when-downgrade">
+
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Plakati sekcija -->
+
+  <section class="section poster-section" id="plakat">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">Službeni plakat</span>
+
+        <h2 class="section-title">Podijelite s prijateljima</h2>
+
+        <p class="section-subtitle">Preuzmite plakat ili ga proslijedite u obiteljske i susjedske grupe</p>
+
+      </div>
+
+ 
+
+      <div class="posters-grid">
+
+        <div class="poster-card">
+
+          <div class="poster-img-wrap" onclick="openPosterModal('assets/plakat-detaljni.jpg')">
+
+            <img src="assets/plakat-detaljni.jpg" alt="Advent u Zdenčini - Detaljni program" loading="lazy">
+
+            <div class="poster-hover-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Povećaj sliku</span>
+
+            </div>
+
+          </div>
+
+          <div class="poster-footer">
+
+            <span>Službeni program događaja</span>
+
+            <a href="assets/plakat-detaljni.jpg" download="Advent-u-Zdencini-Program.jpg" class="btn-download">
+
+              <i class="fa-solid fa-download"></i> Preuzmi
+
+            </a>
+
+          </div>
+
+        </div>
+
+ 
+
+        <div class="poster-card">
+
+          <div class="poster-img-wrap" onclick="openPosterModal('assets/plakat-glavni.jpg')">
+
+            <img src="assets/plakat-glavni.jpg" alt="Advent u Zdenčini - Plakat" loading="lazy">
+
+            <div class="poster-hover-overlay">
+
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+              <span>Povećaj sliku</span>
+
+            </div>
+
+          </div>
+
+          <div class="poster-footer">
+
+            <span>Najavni plakat</span>
+
+            <a href="assets/plakat-glavni.jpg" download="Advent-u-Zdencini-Najava.jpg" class="btn-download">
+
+              <i class="fa-solid fa-download"></i> Preuzmi
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Modal za pregled plakata -->
+
+  <div id="posterModal" class="poster-modal" onclick="closePosterModal(event)">
+
+    <div class="modal-content">
+
+      <button class="modal-close" onclick="closePosterModal(event)">&times;</button>
+
+      <img id="modalImg" src="" alt="Pregled plakata">
+
+    </div>
+
+  </div>
+
+ 
+
+  <!-- Footer -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <h3>🎄 Advent u Zdenčini</h3>
+
+          <p>Radujemo se vašem dolasku! Podržite lokalnu zajednicu i stvorimo zajedno lijepe blagdanske uspomene.</p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4>Kontakt & Prijave</h4>
+
+          <p><i class="fa-solid fa-phone"></i> +385 99 411 9102</p>
+
+          <p><i class="fa-solid fa-location-dot"></i> NK Zdenčina, Donja Zdenčina</p>
+
+          <p><i class="fa-solid fa-clock"></i> 19. & 20. prosinca od 17:00 h</p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>Svi ste od srca dobrodošli! • Ulaz slobodan • NK Zdenčina</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+ 
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
